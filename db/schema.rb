@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151112151731) do
+ActiveRecord::Schema.define(version: 20151112155154) do
 
   create_table "statuses", force: :cascade do |t|
     t.text     "content"
@@ -19,6 +19,8 @@ ActiveRecord::Schema.define(version: 20151112151731) do
     t.datetime "updated_at", null: false
     t.integer  "user_id"
   end
+
+  add_index "statuses", ["user_id"], name: "index_statuses_on_user_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "first_name"
